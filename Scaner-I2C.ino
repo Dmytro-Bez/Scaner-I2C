@@ -2,7 +2,7 @@
 
 void setup(){
     Serial.begin (115200);  
-    Wire.begin (21, 22);                            // sda= GPIO_21 /scl= GPIO_22
+    Wire.begin (21, 22);                                   // sda= GPIO_21 /scl= GPIO_22
 }
 
 void Scanner(){
@@ -11,8 +11,8 @@ void Scanner(){
     byte count = 0;
     Wire.begin();
     for (byte i = 8; i < 120; i++){
-        Wire.beginTransmission (i);                 // Begin I2C transmission Address (i)
-        if(Wire.endTransmission () == 0){           // Receive 0 = success (ACK response) 
+        Wire.beginTransmission (i);                       // Begin I2C transmission Address (i)
+        if(Wire.endTransmission () == 0){                 // Receive 0 = success (ACK response) 
             Serial.print ("Found address: ");
             Serial.print (i, DEC);
             Serial.print (" (0x");
